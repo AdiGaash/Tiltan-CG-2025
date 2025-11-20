@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 
 public class MeshInspector : MonoBehaviour
@@ -5,6 +6,9 @@ public class MeshInspector : MonoBehaviour
     public GameObject targetGameObject;
     public bool showTriangles = true;
     public bool showNormals = true;
+    public bool showVertexNumbers = false; // New parameter to control vertex number display
+    public int maxVertexNumberToShow = int.MaxValue; // New parameter to limit the maximum vertex number shown
+    public int maxTrianglesToShow = int.MaxValue; // New parameter to limit the maximum triangles shown
     private Renderer meshRenderer;
     private MeshFilter meshFilter;
 
@@ -21,7 +25,7 @@ public class MeshInspector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+    
     }
 
     private void FindMeshFilter()
@@ -44,6 +48,19 @@ public class MeshInspector : MonoBehaviour
         }
     }
 
+    private void OnValidate()
+    {
+        // Update mesh filter and renderer when targetGameObject changes
+        if (targetGameObject != null)
+        {
+            FindMeshFilter();
+            if (meshFilter != null)
+            {
+                meshRenderer = meshFilter.GetComponent<Renderer>();
+            }
+        }
+    }
+
     private void OnDrawGizmosSelected()
     {
         if (meshFilter == null || meshFilter.sharedMesh == null)
@@ -59,7 +76,7 @@ public class MeshInspector : MonoBehaviour
         if (meshRenderer != null)
         {
             wasRendererEnabled = meshRenderer.enabled;
-            if (showTriangles || showNormals)
+            if (showTriangles || showNormals || showVertexNumbers)
             {
                 meshRenderer.enabled = false;
             }
@@ -67,12 +84,33 @@ public class MeshInspector : MonoBehaviour
 
         if (showTriangles)
         {
-            for (int i = 0; i < triangles.Length; i += 3)
+            int maxTriangles = Mathf.Min(maxTrianglesToShow, triangles.Length / 3);
+            for (int i = 0; i < maxTriangles; i++)
             {
-                Gizmos.color = Color.HSVToRGB(i / (float)triangles.Length, 1, 1);
-                Gizmos.DrawLine(meshFilter.transform.TransformPoint(vertices[triangles[i]]), meshFilter.transform.TransformPoint(vertices[triangles[i + 1]]));
-                Gizmos.DrawLine(meshFilter.transform.TransformPoint(vertices[triangles[i + 1]]), meshFilter.transform.TransformPoint(vertices[triangles[i + 2]]));
-                Gizmos.DrawLine(meshFilter.transform.TransformPoint(vertices[triangles[i + 2]]), meshFilter.transform.TransformPoint(vertices[triangles[i]]));
+                int index = i * 3;
+                int vertexIndex0 = triangles[index];
+                int vertexIndex1 = triangles[index + 1];
+                int vertexIndex2 = triangles[index + 2];
+                
+                // Ensure we don't exceed vertex array bounds
+                if (vertexIndex0 >= vertices.Length || vertexIndex1 >= vertices.Length || vertexIndex2 >= vertices.Length)
+                {
+                    Debug.LogWarning($"Triangle {i} has invalid vertex indices. Skipping.");
+                    continue;
+                }
+
+                Vector3 v0 = meshFilter.transform.TransformPoint(vertices[vertexIndex0]);
+                Vector3 v1 = meshFilter.transform.TransformPoint(vertices[vertexIndex1]);
+                Vector3 v2 = meshFilter.transform.TransformPoint(vertices[vertexIndex2]);
+                
+                Gizmos.color = Color.HSVToRGB(i / (float)maxTriangles, 1, 1);
+                
+                Gizmos.DrawLine(v0, v1);
+                Gizmos.DrawLine(v1, v2);
+                Gizmos.DrawLine(v2, v0);
+                    
+                // Debug: Print triangle info to console
+                Debug.Log($"Triangle {i}: Vertex indices {vertexIndex0}, {vertexIndex1}, {vertexIndex2}");
             }
         }
 
@@ -82,6 +120,25 @@ public class MeshInspector : MonoBehaviour
             {
                 Gizmos.color = Color.green;
                 Gizmos.DrawLine(meshFilter.transform.TransformPoint(vertices[i]), meshFilter.transform.TransformPoint(vertices[i] + normals[i]));
+            }
+        }
+
+        // Draw vertex numbers if enabled
+        if (showVertexNumbers)
+        {
+            int maxVertexToShow = Mathf.Min(maxVertexNumberToShow, vertices.Length);
+            for (int i = 0; i < maxVertexToShow; i++)
+            {
+                Vector3 vertexPosition = meshFilter.transform.TransformPoint(vertices[i]);
+                Gizmos.color = Color.white;
+                Gizmos.DrawSphere(vertexPosition, 0.02f);
+                
+                // Display vertex number
+                GUIStyle style = new GUIStyle();
+                style.normal.textColor = Color.white;
+                style.fontSize = 8;
+                style.fontStyle = FontStyle.Bold;
+                Handles.Label(vertexPosition, i.ToString(), style);
             }
         }
 
