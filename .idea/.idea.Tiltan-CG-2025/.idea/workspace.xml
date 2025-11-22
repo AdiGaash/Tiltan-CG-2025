@@ -5,10 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/UVOutlineExporter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/UVOutlineExporter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Stylized Character_Archer/Models/Weapon_Bow.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stylized Character_Archer/Models/Weapon_Bow.FBX.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/UVFillTextureGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/UVFillTextureGenerator.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +21,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MeshTextureExporter.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UVFillTextureGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UVOutlineExporter.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
