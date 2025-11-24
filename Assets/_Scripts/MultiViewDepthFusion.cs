@@ -2,11 +2,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-
-
-
-
-
 [RequireComponent(typeof(MeshFilter), typeof(MeshRenderer))]
 public class MultiViewDepthFusion : MonoBehaviour
 {
@@ -65,46 +60,122 @@ public class MultiViewDepthFusion : MonoBehaviour
         meshFilter.mesh = mesh;
     }
 
-    // Step 2: Fuse depth maps from all cameras
+    // Step 2: Fuse depth maps and generate voxel mesh
+   [ContextMenu("Fuse Depth Cameras to Voxels")]
     void FuseDepthCameras()
     {
-        for(int i = 0; i < vertices.Length; i++)
+        if (meshFilter == null) meshFilter = GetComponent<MeshFilter>();
+
+        // 1. Clear previous mesh using sharedMesh (safe in edit mode)
+        if (meshFilter.sharedMesh == null)
+            meshFilter.sharedMesh = new Mesh();
+        else
+            meshFilter.sharedMesh.Clear();
+
+        mesh = meshFilter.sharedMesh;
+
+        // 2. Prepare new lists for vertices and triangles
+        List<Vector3> meshVertices = new List<Vector3>();
+        List<int> meshTriangles = new List<int>();
+        int vertexOffset = 0;
+
+        Vector3 volumeOrigin = transform.position - volumeSize / 2f;
+        float stepX = volumeSize.x / (resolutionX - 1);
+        float stepY = volumeSize.y / (resolutionY - 1);
+        float stepZ = volumeSize.z / (resolutionZ - 1);
+
+        // 3. Loop through all voxels
+        for (int x = 0; x < resolutionX; x++)
         {
-            Vector3 vertex = vertices[i];
-            float minDelta = float.MaxValue;
-
-            foreach(var cam in depthCameras)
+            for (int y = 0; y < resolutionY; y++)
             {
-                // Transform vertex into camera local space
-                Quaternion camRot = Quaternion.Euler(cam.rotationEuler);
-                Vector3 localPos = Quaternion.Inverse(camRot) * (vertex - cam.position);
+                for (int z = 0; z < resolutionZ; z++)
+                {
+                    Vector3 voxelCenter = volumeOrigin + new Vector3(x * stepX, y * stepY, z * stepZ);
 
-                // Map X,Y to UV assuming normalized projection within bounding volume
-                float u = (localPos.x / volumeSize.x) + 0.5f;
-                float v = (localPos.y / volumeSize.y) + 0.5f;
+                    // Check coverage by any depth camera
+                    bool covered = false;
+                    foreach (var cam in depthCameras)
+                    {
+                        Quaternion camRot = Quaternion.Euler(cam.rotationEuler);
+                        Vector3 localPos = Quaternion.Inverse(camRot) * (voxelCenter - cam.position);
 
-                if(u < 0f || u > 1f || v < 0f || v > 1f) continue;
+                        float u = (localPos.x / volumeSize.x) + 0.5f;
+                        float v = (localPos.y / volumeSize.y) + 0.5f;
+                        float zLocal = localPos.z;
 
-                float depthSample = cam.depthMap.GetPixelBilinear(u, v).r;
-                float depthWorld = Mathf.Lerp(cam.nearPlane, cam.farPlane, depthSample);
+                        if (u >= 0f && u <= 1f &&
+                            v >= 0f && v <= 1f &&
+                            zLocal >= cam.nearPlane && zLocal <= cam.farPlane)
+                        {
+                            covered = true;
+                            break;
+                        }
+                    }
 
-                float delta = depthWorld - localPos.z;
-                if(delta < minDelta) minDelta = delta;
+                    if (!covered) continue; // skip voxel if not hit
+
+                    // 4. Add cube geometry for this voxel
+                    Vector3[] cubeVerts = GetCubeVertices(voxelCenter, stepX, stepY, stepZ);
+                    meshVertices.AddRange(cubeVerts);
+
+                    int[] cubeTris = GetCubeTriangles(vertexOffset);
+                    meshTriangles.AddRange(cubeTris);
+
+                    vertexOffset += cubeVerts.Length;
+                }
             }
-
-            // Apply displacement along Y axis (simplified for demo)
-            vertex += Vector3.up * minDelta * displacementScale;
-            vertices[i] = vertex;
         }
 
-        mesh.vertices = vertices;
+        // 5. Assign mesh data
+        mesh.Clear();
+        mesh.vertices = meshVertices.ToArray();
+        mesh.triangles = meshTriangles.ToArray();
         mesh.RecalculateNormals();
+        mesh.RecalculateBounds();
         mesh.RecalculateTangents();
-        meshFilter.mesh = mesh;
+        meshFilter.sharedMesh = mesh; // ensure sharedMesh is used
+
+    #if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(meshFilter);
+        UnityEditor.SceneView.RepaintAll();
+    #endif
     }
     
     
-    
+    // Returns 8 corners of a cube centered at 'center' with dimensions dx,dy,dz
+    Vector3[] GetCubeVertices(Vector3 center, float dx, float dy, float dz)
+    {
+        float hx = dx * 0.5f;
+        float hy = dy * 0.5f;
+        float hz = dz * 0.5f;
+
+        return new Vector3[]
+        {
+            center + new Vector3(-hx,-hy,-hz),
+            center + new Vector3(hx,-hy,-hz),
+            center + new Vector3(hx,hy,-hz),
+            center + new Vector3(-hx,hy,-hz),
+            center + new Vector3(-hx,-hy,hz),
+            center + new Vector3(hx,-hy,hz),
+            center + new Vector3(hx,hy,hz),
+            center + new Vector3(-hx,hy,hz)
+        };
+    }
+
+// Returns 36 indices for a cube using the given vertex offset
+    int[] GetCubeTriangles(int offset)
+    {
+        return new int[]
+        {
+            offset+0,offset+2,offset+1, offset+0,offset+3,offset+2, // bottom
+            offset+4,offset+5,offset+6, offset+4,offset+6,offset+7, // top
+            offset+0,offset+1,offset+5, offset+0,offset+5,offset+4, // front
+            offset+1,offset+2,offset+6, offset+1,offset+6,offset+5, // right
+            offset+2,offset+3,offset+7, offset+2,offset+7,offset+6, // back
+            offset+3,offset+0,offset+4, offset+3,offset+4,offset+7  // left
+        };
+    }
     
     void OnDrawGizmos()
     { 
