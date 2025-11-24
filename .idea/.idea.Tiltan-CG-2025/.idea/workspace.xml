@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/FinalProject1.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/FinalProject1.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/MultiViewDepthFusion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/MultiViewDepthFusion.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +102,7 @@
       <workItem from="1763653073022" duration="28000" />
       <workItem from="1763653357260" duration="119000" />
       <workItem from="1763654845136" duration="9937000" />
-      <workItem from="1763990935880" duration="3237000" />
+      <workItem from="1763990935880" duration="4558000" />
     </task>
     <servers />
   </component>

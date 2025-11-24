@@ -104,12 +104,17 @@ public class MultiViewDepthFusion : MonoBehaviour
                         float v = (localPos.y / volumeSize.y) + 0.5f;
                         float zLocal = localPos.z;
 
-                        if (u >= 0f && u <= 1f &&
-                            v >= 0f && v <= 1f &&
-                            zLocal >= cam.nearPlane && zLocal <= cam.farPlane)
+                        if (u >= 0f && u <= 1f && v >= 0f && v <= 1f)
                         {
-                            covered = true;
-                            break;
+                            float depthSample = cam.depthMap.GetPixelBilinear(u, v).r;
+                            float depthWorld = Mathf.Lerp(cam.nearPlane, cam.farPlane, depthSample);
+
+                            // Voxel is visible if its camera-space Z is closer than the depth map
+                            if (zLocal >= cam.nearPlane && zLocal <= depthWorld)
+                            {
+                                covered = true;
+                                break;
+                            }
                         }
                     }
 
