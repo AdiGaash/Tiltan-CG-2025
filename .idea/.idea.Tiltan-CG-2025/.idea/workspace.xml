@@ -38,7 +38,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "Lesson1-2-edges",
+    "git-widget-placeholder": "Lesson1-3-subdivision",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -99,6 +99,7 @@
       <workItem from="1763653357260" duration="119000" />
       <workItem from="1763654845136" duration="9937000" />
       <workItem from="1764594926395" duration="831000" />
+      <workItem from="1764856124214" duration="886000" />
     </task>
     <servers />
   </component>
