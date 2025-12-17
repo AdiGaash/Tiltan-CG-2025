@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/UVFillTextureGenerator.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/UVFillTextureGenerator.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lesson1.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lesson1.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Stylized Character_Archer/Models/Archer.FBX.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Stylized Character_Archer/Models/Archer.FBX.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/MeshDebugger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/MeshDebugger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/MeshInspector.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/MeshInspector.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +50,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Color Scheme Font",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -99,6 +103,8 @@
       <workItem from="1763653073022" duration="28000" />
       <workItem from="1763653357260" duration="119000" />
       <workItem from="1763654845136" duration="9937000" />
+      <workItem from="1765995540744" duration="70000" />
+      <workItem from="1765995707339" duration="1562000" />
     </task>
     <servers />
   </component>

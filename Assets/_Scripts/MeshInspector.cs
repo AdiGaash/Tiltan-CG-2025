@@ -6,13 +6,13 @@ public class MeshInspector : MonoBehaviour
     public GameObject targetGameObject;
     public bool showTriangles = true;
     public bool showNormals = true;
-    public bool showVertexNumbers = false; // New parameter to control vertex number display
-    public int maxVertexNumberToShow = int.MaxValue; // New parameter to limit the maximum vertex number shown
-    public int maxTrianglesToShow = int.MaxValue; // New parameter to limit the maximum triangles shown
+    public bool showVertexNumbers = false; // parameter to control vertex number display
+    public int maxVertexNumberToShow = int.MaxValue; // parameter to limit the maximum vertex number shown
+    public int maxTrianglesToShow = int.MaxValue; // parameter to limit the maximum triangles shown
     private Renderer meshRenderer;
     private MeshFilter meshFilter;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         FindMeshFilter();
@@ -22,11 +22,7 @@ public class MeshInspector : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
     
-    }
 
     private void FindMeshFilter()
     {
