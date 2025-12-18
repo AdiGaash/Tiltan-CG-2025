@@ -1,0 +1,30 @@
+A wonderful set of High Quality Knives for your games.
+This package includes 15 Fantasy Stylized Knives_VOL01
+Each of the Knives has an unique material.
+
+
+Disclaimer: Knives are not animated
+
+Technical details:
+
+Number of Unique Meshes: 15
+
+Collision: Yes, Custom.
+
+Average Tris Count: 12780 (minimum:7019 maximum:17715  Total:191713).
+
+LODs: Yes.LOD0,LOD1,LOD2(Average Tris Count LOD minimum :2494  maximum:17715)
+
+Number of Materials: 15
+
+Number of Textures: 65
+
+Texture Resolutions: 2048px x 2048px.
+
+Texture Format: .PNG
+
+uv: non overlabed and has 2 channel
+
+Supported Development Platforms:
+
+Windows: Yes.    Mac: Yes.    Android: Yes.    iOS: Yes.
