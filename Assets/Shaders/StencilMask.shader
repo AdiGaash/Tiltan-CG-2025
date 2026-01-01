@@ -12,7 +12,7 @@
         Pass 
         {
             Blend Zero One
-            ZWrite Off
+           
 
             Stencil
             {
@@ -20,6 +20,9 @@
                 Comp Always
                 Pass Replace
             }
+            
+            ColorMask 0
+            ZWrite Off
         }
     }
 }
