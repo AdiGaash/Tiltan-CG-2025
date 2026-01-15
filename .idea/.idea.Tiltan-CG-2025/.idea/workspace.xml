@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Custom Lighting/Cel Shader/CustomLightingCelShader.shadersubgraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Custom Lighting/Cel Shader/CustomLightingCelShader.shadersubgraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Custom Lighting/CustomLightingCelShader.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Custom Lighting/CustomLightingCelShader.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Node Reference/Math/Reciprocal.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Node Reference/Math/Reciprocal.shadergraph" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +20,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/Garden/Shaders/GravelsPixelDepthOffset_Shader.shader" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/StencilMask.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/EdgeDetector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MaterialParameterController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -55,7 +53,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "Lesson5-0-lights",
+    "git-widget-placeholder": "Lesson6-0-HLSL",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -127,6 +125,7 @@
       <workItem from="1767278400157" duration="1547000" />
       <workItem from="1767293677044" duration="1710000" />
       <workItem from="1767868437024" duration="4135000" />
+      <workItem from="1768479137322" duration="1619000" />
     </task>
     <servers />
   </component>
