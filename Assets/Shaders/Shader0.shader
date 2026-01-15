@@ -19,6 +19,7 @@ Shader "Unlit/Shader0" // shader name  - shader1 under shader category - Unlit
         _RenderTexture("My Render Texture", 2D) = "" { }
     }
     // specific shader (there might be more then on subshader) under one defined shader.
+    // Only one will be choose by the GPU based on the hardware and the settings of the subshader / LOD level that can be support by the hardware
     SubShader
     {
         Tags { "RenderType"="Opaque" } // common tags: Opaque, Transparent, Overlay,
@@ -31,6 +32,7 @@ Shader "Unlit/Shader0" // shader name  - shader1 under shader category - Unlit
 
         Pass
         {
+            // Pass = rendering pass
             
             // order of the code:
             // assume this is like C,
@@ -47,7 +49,7 @@ Shader "Unlit/Shader0" // shader name  - shader1 under shader category - Unlit
             #pragma vertex vert // define the name of the vertex func
             #pragma fragment frag // define the name of the fragment func
             
-            #include "UnityCG.cginc"
+            #include "UnityCG.cginc" // include common Unity shader functions and macros (like UnityObjectToClipPos)
 
             // structure to be pass from the app to the vertex
             struct appdata
