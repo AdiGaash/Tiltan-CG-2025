@@ -80,6 +80,16 @@ public class MaterialParameterController : MonoBehaviour
 
         runtimeMaterial.SetTexture(parameterName, value);
     }
+    
+    
+    /// <summary>
+    /// Update the global shader parameter
+    /// </summary>
+    public void SetGlobalParameter(string parameterName, float globalValue)
+    {
+        Shader.SetGlobalFloat(parameterName, globalValue);
+    }
+    
 
     /* ---------------------------------------------------------
      * OPTIONAL: GETTERS
