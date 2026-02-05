@@ -83,14 +83,19 @@ Shader "Custom/GeomatricShader0"
                 return o;
             }
 
-            // ---- Geometry shader: receives an entire triangle and can emit new geometry ----
+           // ---- Geometry shader: receives an entire triangle and can emit new geometry ----
             // [maxvertexcount(3)] tells the GPU how many vertices this geometry shader will output per input primitive.
             // Here we emit exactly 3 vertices (one triangle) for each input triangle.
             [maxvertexcount(3)]
             void Geo(
                 triangle v2g input[3],               // input[] contains the 3 vertices of the source triangle (object-space data set in Vert)
-                inout TriangleStream<g2f> triStream  // stream used to emit new triangle vertices to the rasterizer
+                inout TriangleStream<g2f> triStream  // TriangleStream: emits vertices as indexed triangles (3 vertices per triangle).
+                                                     // Alternative streams:
+                                                     // - LineStream<g2f>: emits vertices as line segments (2 vertices per line).
+                                                     // - PointStream<g2f>: emits individual points (1 vertex per point).
+                                                     // The 'inout' modifier allows reading and writing to the stream.
             )
+            
             {
                 
 
