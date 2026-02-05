@@ -5,34 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/RenderTextureBlit.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/RenderTextureBlit.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/GeomatricShader0.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Shaders/GeomatricShader0.shader.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/paralex.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/paralex.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Scriptable Render Pipeline Core/Common/Materials/SamplesTurntable_White.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Scriptable Render Pipeline Core/Common/Materials/SamplesTurntable_White.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Production Ready Shaders/Environment/Particles/WaterfallMist.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Production Ready Shaders/Environment/Particles/WaterfallMist.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Production Ready Shaders/Lit/URP Lit.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Production Ready Shaders/Lit/URP Lit.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/CameraStacking/3D Skybox/3DSkybox.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/CameraStacking/3D Skybox/3DSkybox.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/CameraStacking/3D Skybox/Animation/Main Camera.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/CameraStacking/3D Skybox/Animation/Main Camera.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/Decals/BlobShadow/BlobShadow_Graph.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/Decals/BlobShadow/BlobShadow_Graph.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/Decals/PaintSplat/PaintSplat_Mat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/Decals/PaintSplat/PaintSplat_Mat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/Decals/ProxyLighting/Shaders/SpotLightProxy_Graph.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/Decals/ProxyLighting/Shaders/SpotLightProxy_Graph.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/DepthBlit/DepthBlitRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/DepthBlit/DepthBlitRenderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/KeepFrame/SwirlyFrame.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/KeepFrame/SwirlyFrame.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/OcclusionEffect/OcclusionEffect_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/OcclusionEffect/OcclusionEffect_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/TrailEffect/DepthHistory_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/TrailEffect/DepthHistory_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/TrailEffect/TrailMap.renderTexture" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/RendererFeatures/TrailEffect/TrailMap.renderTexture" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Lesson5Lights.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Lesson5Lights.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC/PC_High_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC/PC_High_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/VolumeProfiles/HighQualityVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/VolumeProfiles/HighQualityVolumeProfile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader Graph/Testing.shadergraph" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader Graph/Testing.shadergraph.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Shader Graph/UV.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shader Graph/UV.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SharedAssets/FirstPersonController/InputSystem/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SharedAssets/FirstPersonController/InputSystem/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/MaterialParameterController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/MaterialParameterController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +28,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scenes/Garden/Shaders/GravelsPixelDepthOffset_Shader.shader" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/GeomatricShader0.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/StencilMask.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/EdgeDetector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MaterialParameterController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -86,7 +62,7 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "Lesson8-0",
+    "git-widget-placeholder": "Lesson9-0-GeometricShader",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -162,6 +138,7 @@
       <workItem from="1768487612920" duration="6080000" />
       <workItem from="1769084554971" duration="593000" />
       <workItem from="1769433947475" duration="3132000" />
+      <workItem from="1770291105647" duration="673000" />
     </task>
     <servers />
   </component>
