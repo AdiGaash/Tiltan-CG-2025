@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/GeomatricShader0.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Shaders/GeomatricShader0.shader.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/GeomatricShader0.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/GeomatricShader0.shader" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +136,7 @@
       <workItem from="1768487612920" duration="6080000" />
       <workItem from="1769084554971" duration="593000" />
       <workItem from="1769433947475" duration="3132000" />
-      <workItem from="1770291105647" duration="673000" />
+      <workItem from="1770291105647" duration="1051000" />
     </task>
     <servers />
   </component>
