@@ -26,7 +26,7 @@ public class BasicComputeOutputToObjectTexture : MonoBehaviour
 
     private void InitShader()
     {
-        kernelHandle = shader.FindKernel("Square");
+        kernelHandle = shader.FindKernel("WriteToTexture");
 
 		//Create more parameters as needed, for example a Vector4 and pass this to the shader using SetVector...
         

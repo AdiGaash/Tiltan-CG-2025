@@ -4,14 +4,11 @@
 // Create a RenderTexture with enableRandomWrite flag and set it
 // with cs.SetTexture
 RWTexture2D<float4> Result;
-//Create a float4 to hold the rectangle that defines the square
-
 
 
 [numthreads(8,8,1)]
-void Square (uint3 id : SV_DispatchThreadID)
+void WriteToTexture (uint3 id : SV_DispatchThreadID)
 {
-    
     float bChannel = 0;
 
     Result[id.xy] = float4(0.0, 0.0, bChannel, 1.0);
