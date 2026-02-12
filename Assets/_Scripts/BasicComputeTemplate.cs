@@ -16,7 +16,19 @@ public class BasicComputeTemplate : MonoBehaviour
 
     void Start()
     {
-        // ================================
+        if (SystemInfo.supportsComputeShaders)
+        {
+            RunComputeShader();
+        }
+        else
+        {
+            Debug.LogError("Compute shaders not supported on this platform.");
+        }
+    }
+    
+    void RunComputeShader()
+    {
+    // ================================
         // 1. FIND KERNEL
         // ================================
         int kernelHandle = computeShader.FindKernel("CSMain");
