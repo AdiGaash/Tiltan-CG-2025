@@ -1,8 +1,10 @@
 // Each #kernel tells which function to compile; you can have many kernels
-#pragma kernel Square
+#pragma kernel WriteToTexture
 
 // Create a RenderTexture with enableRandomWrite flag and set it
-// with cs.SetTexture
+// with the c# script using SetTexture
+// shared WTexture2D<float4> Result; - if you want to share the texture between multiple kernels in the same .compute file
+
 RWTexture2D<float4> Result;
 
 
