@@ -6,16 +6,13 @@
 RWTexture2D<float4> Result;
 //Create a float4 to hold the rectangle that defines the square
 
-//Return 1 if pt is in the rect parameter and 0 otherwise
-float inSquare( float2 pt, float4 rect ){
-    return 0.0;
-}
+
 
 [numthreads(8,8,1)]
 void Square (uint3 id : SV_DispatchThreadID)
 {
-    //Call the inSquare function to set res
-    float res = 0;
+    
+    float bChannel = 0;
 
-    Result[id.xy] = float4(0.0, 0.0, res, 1.0);
+    Result[id.xy] = float4(0.0, 0.0, bChannel, 1.0);
 }
