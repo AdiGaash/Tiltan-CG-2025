@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Materials/Ray in Volume.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Materials/Ray in Volume.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VolumeRendering.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VolumeRendering.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +40,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Shader0.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/StencilMask.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/VolumetricLight.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Shaders/VolumetricLight_Starter.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Shaders/VolumetricLight_IsoStarter.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/BasicComputeTemplate.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/EdgeDetector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MaterialInherit.cs" root0="FORCE_HIGHLIGHTING" />
@@ -80,7 +79,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "lesson11-1",
+    "git-widget-placeholder": "lesson11-2",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
@@ -162,7 +161,7 @@
       <workItem from="1770821539951" duration="87000" />
       <workItem from="1770822538081" duration="4529000" />
       <workItem from="1771505813097" duration="5932000" />
-      <workItem from="1772101654553" duration="3383000" />
+      <workItem from="1772101654553" duration="4609000" />
     </task>
     <servers />
   </component>
