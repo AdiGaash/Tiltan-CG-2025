@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -79,7 +77,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "lesson11-2",
+    "git-widget-placeholder": "lesson11-3",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
@@ -161,7 +159,7 @@
       <workItem from="1770821539951" duration="87000" />
       <workItem from="1770822538081" duration="4529000" />
       <workItem from="1771505813097" duration="5932000" />
-      <workItem from="1772101654553" duration="4609000" />
+      <workItem from="1772101654553" duration="4924000" />
     </task>
     <servers />
   </component>
