@@ -5,25 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e6230c4a-7785-4653-92f5-d84549da8d89" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/RayTracingRenderPass.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/RayTracingRenderPass.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/_Scripts/RayTracingRendererFeature.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Tiltan-CG-2025/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_02.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_02.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_03.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_03.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_04.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_04.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_05.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_05.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_06.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_06.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_07.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_07.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_08.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_08.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_09.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_09.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_10.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_10.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_11.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_11.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_12.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_12.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_13.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_13.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_14.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_14.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_15.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/15 Stylized_Knives_VOL01/Materials/M_HS_Knife_15.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Scenes/BiRPBackground.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Shader Graph/17.2.0/Feature Examples/Scenes/BiRPBackground.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/SharedAssets/Settings/PackageSamplesURPAsset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/SharedAssets/Settings/PackageSamplesURPAsset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/SharedAssets/Settings/SamplesForwardRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Samples/Universal Render Pipeline/17.2.0/URP Package Samples/SharedAssets/Settings/SamplesForwardRenderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/basic ray tracing.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/basic ray tracing.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Settings/PC/PC_High_Renderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC/PC_High_Renderer.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/PC/PC_High_ScreenRenderer.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/PC/PC_High_ScreenRenderer.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/UniversalRenderPipelineGlobalSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Shaders/RayTracingSpheres.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Shaders/RayTracingSpheres.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_Scripts/RayTracingSphereManagerSimple.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_Scripts/RayTracingSphereManagerSimple.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +31,7 @@
   </component>
   <component name="CopilotUserSelectedModel">
     <selectedModels>
-      <entry key="edit-panel" value="GPT-5 mini" />
+      <entry key="edit-panel" value="Claude Haiku 4.5" />
       <entry key="chat-panel" value="Claude Haiku 4.5" />
       <entry key="agent-panel" value="Claude Haiku 4.5" />
     </selectedModels>
@@ -70,6 +64,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MeshDebugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MeshInspector.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/MeshSubdivision.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_Scripts/RayTracingRendererFeature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/RenderTextureBlit.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UVGizmoDebugger.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/_Scripts/UVIslandOutlineGizmo.cs" root0="FORCE_HIGHLIGHTING" />
@@ -109,7 +104,7 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.github.copilot.settings.customization.CustomizationConfigurable&quot;,
     &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -141,15 +136,13 @@
       <option name="MIXED_MODE_DEBUG" value="0" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false" ignored-value-for-modified-check="61220">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" useMixedMode="false">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="61220" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="runtimes">
-        <list>
-          <MonoRuntime />
-        </list>
+        <list />
       </option>
       <option name="selectedOptions">
         <list />
@@ -188,6 +181,7 @@
       <workItem from="1772101654553" duration="4609000" />
       <workItem from="1772667203765" duration="968000" />
       <workItem from="1772668218838" duration="2789000" />
+      <workItem from="1772704275239" duration="7628000" />
     </task>
     <servers />
   </component>

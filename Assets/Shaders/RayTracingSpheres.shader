@@ -35,7 +35,7 @@ Shader "Custom/RayTracingSpheres"
 		static const float PI = 3.1415;
 
 		// Camera Settings
-		float3 ViewParams;
+		float2 ViewParams;
 		float4x4 CamLocalToWorldMatrix;
 			
 			// --- Structures ---
@@ -178,11 +178,10 @@ Shader "Custom/RayTracingSpheres"
 		float4 frag (v2f i) : SV_Target
 		{
 			// Setup camera geometry
-			float3 focusPointLocal = float3(i.uv - 0.5, 1.0) * ViewParams;
+			float3 focusPointLocal = float3(i.uv - 0.5, 1.0) * float3(ViewParams, 1.0);
 			float3 focusPoint = mul(CamLocalToWorldMatrix, float4(focusPointLocal, 1.0));
 			
 			
-
 			// Create single ray from camera to focal point
 			Ray ray;
 			ray.origin = _WorldSpaceCameraPos;
