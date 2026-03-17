@@ -2,18 +2,30 @@ using UnityEngine;
 
 public class MarchingSquares : MonoBehaviour
 {
+    [Header("Grid Settings")]
     public int width = 20;
     public int height = 20;
+
+    [Header("Marching Settings")]
+    [Range(0f, 1f)]
     public float threshold = 0.5f;
-    public bool ShowPoints = true;
-    public bool ShowSquares = true;
-    public bool DrawMarchingSquares = true;
+
+    [Header("Debug View")]
+    public bool showPoints = true;
+    public bool showSquares = true;
+    public bool drawMarchingSquares = true;
 
     float[,] values;
 
     void Start()
     {
         GenerateField();
+    }
+
+    void Update()
+    {
+        // Optional: animate threshold (great for teaching)
+        // threshold = Mathf.PingPong(Time.time, 1f);
     }
 
     void GenerateField()
@@ -24,7 +36,6 @@ public class MarchingSquares : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                // Generate scalar field using Perlin Noise
                 values[x, y] = Mathf.PerlinNoise(x * 0.1f, y * 0.1f);
             }
         }
@@ -33,30 +44,62 @@ public class MarchingSquares : MonoBehaviour
     void OnDrawGizmos()
     {
         if (values == null) return;
-        if (DrawMarchingSquares)
-        {
-            DoMarchingSquares();
-            return;
-        }
 
-        if(ShowPoints)
+        if (showPoints)
             DrawPoints();
-        if(ShowSquares)
+
+        if (showSquares)
             DrawSquares();
-        
-        for (int x = 0; x < width - 1; x++)
+
+        if (drawMarchingSquares)
+            DoMarchingSquares();
+    }
+
+    // ---------------------------
+    // 🟢 Draw scalar field points
+    // ---------------------------
+    void DrawPoints()
+    {
+        for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < height - 1; y++)
+            for (int y = 0; y < height; y++)
             {
-                int caseIndex = GetCase(x, y);
+                // Grayscale visualization (better than black/white)
+                float v = values[x, y];
+                Gizmos.color = new Color(v, v, v);
 
-                Vector3 center = new Vector3(x + 0.5f, y + 0.5f, 0);
-
-                UnityEditor.Handles.Label(center, caseIndex.ToString());
+                Gizmos.DrawSphere(new Vector3(x, y, 0), 0.1f);
             }
         }
     }
 
+    // ---------------------------
+    // 🟦 Draw grid squares
+    // ---------------------------
+    void DrawSquares()
+    {
+        Gizmos.color = Color.gray;
+
+        for (int x = 0; x < width - 1; x++)
+        {
+            for (int y = 0; y < height - 1; y++)
+            {
+                Vector3 bl = new Vector3(x, y, 0);
+                Vector3 br = new Vector3(x + 1, y, 0);
+                Vector3 tr = new Vector3(x + 1, y + 1, 0);
+                Vector3 tl = new Vector3(x, y + 1, 0);
+
+                Gizmos.DrawLine(bl, br);
+                Gizmos.DrawLine(br, tr);
+                Gizmos.DrawLine(tr, tl);
+                Gizmos.DrawLine(tl, bl);
+            }
+        }
+    }
+
+    // ---------------------------
+    // 🧠 Marching Squares Logic
+    // ---------------------------
     void DoMarchingSquares()
     {
         for (int x = 0; x < width - 1; x++)
@@ -69,88 +112,50 @@ public class MarchingSquares : MonoBehaviour
         }
     }
 
-    // 🟢 Draw scalar field points
-    void DrawPoints()
-    {
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                // White = inside, Black = outside
-                Gizmos.color = values[x, y] > threshold ? Color.white : Color.black;
-
-                // Draw small sphere at each grid point
-                Gizmos.DrawSphere(new Vector3(x, y, 0), 0.1f);
-            }
-        }
-    }
-
-    // 🟦 Draw grid cells as wireframe squares
-    void DrawSquares()
-    {
-        Gizmos.color = Color.gray;
-
-        // Note: width - 1 and height - 1 because each square uses 4 points
-        for (int x = 0; x < width - 1; x++)
-        {
-            for (int y = 0; y < height - 1; y++)
-            {
-                // Bottom-left corner of the square
-                Vector3 bl = new Vector3(x, y, 0);
-                Vector3 br = new Vector3(x + 1, y, 0);
-                Vector3 tr = new Vector3(x + 1, y + 1, 0);
-                Vector3 tl = new Vector3(x, y + 1, 0);
-
-                // Draw square using lines
-                Gizmos.DrawLine(bl, br);
-                Gizmos.DrawLine(br, tr);
-                Gizmos.DrawLine(tr, tl);
-                Gizmos.DrawLine(tl, bl);
-            }
-        }
-    }
-    
-    
+    // ---------------------------
+    // 🔢 Compute case index (0–15)
+    // ---------------------------
     int GetCase(int x, int y)
     {
         int caseIndex = 0;
 
-        // Each corner contributes a bit to the case index
-        // We use bitwise OR (|=) to "turn on" bits
-
-        // Bottom-left corner (bit 0 → value 1)
-        if (values[x, y] > threshold)
-            caseIndex |= 1;
-
-        // Bottom-right corner (bit 1 → value 2)
-        if (values[x + 1, y] > threshold)
-            caseIndex |= 2;
-
-        // Top-right corner (bit 2 → value 4)
-        if (values[x + 1, y + 1] > threshold)
-            caseIndex |= 4;
-
-        // Top-left corner (bit 3 → value 8)
-        if (values[x, y + 1] > threshold)
-            caseIndex |= 8;
+        if (values[x, y] > threshold) caseIndex |= 1;           // BL
+        if (values[x + 1, y] > threshold) caseIndex |= 2;       // BR
+        if (values[x + 1, y + 1] > threshold) caseIndex |= 4;   // TR
+        if (values[x, y + 1] > threshold) caseIndex |= 8;       // TL
 
         return caseIndex;
     }
-    
-    
+
+    // ---------------------------
+    // 🔵 Interpolation function
+    // ---------------------------
+    Vector3 Interpolate(Vector3 p1, Vector3 p2, float v1, float v2)
+    {
+        if (Mathf.Abs(v1 - v2) < 0.0001f)
+            return (p1 + p2) * 0.5f;
+
+        float t = (threshold - v1) / (v2 - v1);
+        t = Mathf.Clamp01(t);
+
+        return Vector3.Lerp(p1, p2, t);
+    }
+
+    // ---------------------------
+    // ✏️ Draw contour lines
+    // ---------------------------
     void DrawCase(int x, int y, int caseIndex)
     {
-        // Corner positions
-        Vector3 bl = new Vector3(x, y, 0);         // bottom-left
-        Vector3 br = new Vector3(x + 1, y, 0);     // bottom-right
-        Vector3 tr = new Vector3(x + 1, y + 1, 0); // top-right
-        Vector3 tl = new Vector3(x, y + 1, 0);     // top-left
+        Vector3 bl = new Vector3(x, y, 0);
+        Vector3 br = new Vector3(x + 1, y, 0);
+        Vector3 tr = new Vector3(x + 1, y + 1, 0);
+        Vector3 tl = new Vector3(x, y + 1, 0);
 
-        // Edge midpoints (simple version - no interpolation yet)
-        Vector3 midLeft   = (bl + tl) * 0.5f;
-        Vector3 midRight  = (br + tr) * 0.5f;
-        Vector3 midTop    = (tl + tr) * 0.5f;
-        Vector3 midBottom = (bl + br) * 0.5f;
+        // 🔥 Interpolated edge points
+        Vector3 midLeft   = Interpolate(bl, tl, values[x, y], values[x, y + 1]);
+        Vector3 midRight  = Interpolate(br, tr, values[x + 1, y], values[x + 1, y + 1]);
+        Vector3 midTop    = Interpolate(tl, tr, values[x, y + 1], values[x + 1, y + 1]);
+        Vector3 midBottom = Interpolate(bl, br, values[x, y], values[x + 1, y]);
 
         Gizmos.color = Color.green;
 
@@ -158,7 +163,6 @@ public class MarchingSquares : MonoBehaviour
         {
             case 0:
             case 15:
-                // No lines
                 break;
 
             case 1:
