@@ -45,8 +45,9 @@ public class MarchingSquares : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                // White = inside, Black = outside
-                Gizmos.color = values[x, y] > threshold ? Color.white : Color.black;
+                
+                float value = values[x, y];
+                Gizmos.color = new Color(value, value, value);
 
                 // Draw small sphere at each grid point
                 Gizmos.DrawSphere(new Vector3(x, y, 0), 0.1f);
