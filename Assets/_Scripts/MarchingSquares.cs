@@ -1,5 +1,5 @@
+
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class MarchingSquares : MonoBehaviour
 {
@@ -18,13 +18,19 @@ public class MarchingSquares : MonoBehaviour
 
     float[,] values;
     float[,] noiseValues;
+    private Metaball[] metaballs;
 
     void Start()
     {
         GenerateField();
+        FindMetaballs();
+        UpdateField(); 
     }
 
-    
+    void FindMetaballs()
+    {
+        metaballs = FindObjectsOfType<Metaball>();
+    }
 
     void GenerateField()
     {
@@ -39,6 +45,41 @@ public class MarchingSquares : MonoBehaviour
 
                 noiseValues[x, y] = noise;
                 values[x, y] = noise; // initial
+            }
+        }
+    }
+
+    // Public method that metaballs can call to update the field
+    public void UpdateField()
+    {
+        // Refresh metaballs list in case new ones were added
+        if (metaballs == null || metaballs.Length == 0)
+        {
+            FindMetaballs();
+        }
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                Vector2 point = new Vector2(x, y);
+                
+                // Start with base noise value
+                float combinedValue = noiseValues[x, y];
+                
+                // Add influence from all metaballs
+                if (metaballs != null)
+                {
+                    foreach (var metaball in metaballs)
+                    {
+                        if (metaball != null)
+                        {
+                            combinedValue += metaball.CalculateInfluence(point);
+                        }
+                    }
+                }
+                
+                values[x, y] = combinedValue;
             }
         }
     }
@@ -225,44 +266,5 @@ public class MarchingSquares : MonoBehaviour
                 Gizmos.DrawLine(midLeft, midBottom);
                 break;
         }
-    }
-    
-   
-    
-    Vector2 GetMouseWorldPosition()
-    {
-        Vector2 mouseScreen = Mouse.current.position.ReadValue();
-
-        Vector3 world = Camera.main.ScreenToWorldPoint(
-            new Vector3(mouseScreen.x, mouseScreen.y, 0f));
-
-        return new Vector2(world.x, world.y);
-    }
-    
-    
-    void UpdateFieldWithMetaball()
-    {
-        Vector2 mousePos = GetMouseWorldPosition();
-
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                Vector2 point = new Vector2(x, y);
-
-                float dist = Vector2.Distance(point, mousePos);
-
-                // Smooth metaball
-                float metaball = Mathf.Exp(-dist * dist * 0.8f);
-
-                // Combine noise + metaball
-                values[x, y] = noiseValues[x, y] + metaball;
-            }
-        }
-    }
-    
-    void Update()
-    {
-        UpdateFieldWithMetaball();
     }
 }
