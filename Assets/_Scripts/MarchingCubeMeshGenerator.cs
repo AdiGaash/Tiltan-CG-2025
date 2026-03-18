@@ -69,17 +69,40 @@ public class MarchingCubeMeshGenerator : MonoBehaviour
     
     private float[,,] GenerateVoxelData()
     {
-         // TODO: Implement the GenerateVoxelData() method to create a 3D array of density values for the marching cubes algorithm.
-         
-        return null; // Replace this line with your implementation
+        float[,,] data = new float[gridSize, gridSize, gridSize];
+        
+        for (int x = 0; x < gridSize; x++)
+        {
+            for (int y = 0; y < gridSize; y++)
+            {
+                for (int z = 0; z < gridSize; z++)
+                {
+                    Vector3 worldPos = new Vector3(x, y, z) + noiseOffset;
+                    
+                    // Generate density using 3D Perlin noise
+                    float density = GenerateDensity(worldPos);
+                    data[x, y, z] = density;
+                }
+            }
+        }
+        
+        return data;
     }
     
     private float GenerateDensity(Vector3 position)
     {
-        //TODO: Calculate the density value at a given 3D position
-        // Example: Sphere with noise you can set a center point: 
-        // Vector3 center = Vector3.one * (gridSize * 0.5f), you can combine this with distance calculation and noise (same as we did with squares)
+        // Example: Sphere with noise
+        Vector3 center = Vector3.one * (gridSize * 0.5f);
+        float distanceFromCenter = Vector3.Distance(position, center);
+        float sphereRadius = gridSize * 0.3f;
         
-        return 0.0f; // Replace this line with your implementation
+        // Basic sphere
+        float sphereDensity = sphereRadius - distanceFromCenter;
+        
+        // Add 3D noise for organic variation
+        float noise = Mathf.PerlinNoise(position.x * noiseScale, position.y * noiseScale) * 
+                      Mathf.PerlinNoise(position.z * noiseScale, position.x * noiseScale);
+        
+        return sphereDensity + (noise * 5.0f);
     }
 }
