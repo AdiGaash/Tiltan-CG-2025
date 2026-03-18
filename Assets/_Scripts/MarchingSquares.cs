@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MarchingSquares : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class MarchingSquares : MonoBehaviour
     public bool drawMarchingSquares = true;
 
     float[,] values;
+    float[,] noiseValues;
 
     void Start()
     {
@@ -27,12 +29,16 @@ public class MarchingSquares : MonoBehaviour
     void GenerateField()
     {
         values = new float[width, height];
+        noiseValues = new float[width, height];
 
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                values[x, y] = Mathf.PerlinNoise(x * 0.1f, y * 0.1f);
+                float noise = Mathf.PerlinNoise(x * 0.1f, y * 0.1f);
+
+                noiseValues[x, y] = noise;
+                values[x, y] = noise; // initial
             }
         }
     }
@@ -219,5 +225,44 @@ public class MarchingSquares : MonoBehaviour
                 Gizmos.DrawLine(midLeft, midBottom);
                 break;
         }
+    }
+    
+   
+    
+    Vector2 GetMouseWorldPosition()
+    {
+        Vector2 mouseScreen = Mouse.current.position.ReadValue();
+
+        Vector3 world = Camera.main.ScreenToWorldPoint(
+            new Vector3(mouseScreen.x, mouseScreen.y, 0f));
+
+        return new Vector2(world.x, world.y);
+    }
+    
+    
+    void UpdateFieldWithMetaball()
+    {
+        Vector2 mousePos = GetMouseWorldPosition();
+
+        for (int x = 0; x < width; x++)
+        {
+            for (int y = 0; y < height; y++)
+            {
+                Vector2 point = new Vector2(x, y);
+
+                float dist = Vector2.Distance(point, mousePos);
+
+                // Smooth metaball
+                float metaball = Mathf.Exp(-dist * dist * 0.8f);
+
+                // Combine noise + metaball
+                values[x, y] = noiseValues[x, y] + metaball;
+            }
+        }
+    }
+    
+    void Update()
+    {
+        UpdateFieldWithMetaball();
     }
 }
