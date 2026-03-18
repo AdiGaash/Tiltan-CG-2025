@@ -22,11 +22,7 @@ public class MarchingSquares : MonoBehaviour
         GenerateField();
     }
 
-    void Update()
-    {
-        // Optional: animate threshold (great for teaching)
-        // threshold = Mathf.PingPong(Time.time, 1f);
-    }
+    
 
     void GenerateField()
     {
